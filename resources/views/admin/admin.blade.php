@@ -5,6 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
     <title>@yield('title') | Administration</title>
     @vite('resources/css/app.css')
 </head>
@@ -18,7 +20,7 @@
     <main class="content-wrap">
 
         @if(session('success'))
-            <div role="alert" class="rounded border-s-4 border-green-500 bg-red-50 p-4">
+            <div role="succes" class="rounded border-s-4 border-green-500 bg-green-50 p-4">
                 <strong class="block font-medium text-green-800"> Success </strong>
                 <p class="mt-2 text-sm text-green-700">{{ session('success') }}</p>
             </div>
@@ -38,4 +40,15 @@
 </div>
 
 </body>
+
+<script>
+    new TomSelect('select[multiple]' , {
+        plugins: {
+            remove_button: {
+                title: 'Supprimer',
+            }
+        }
+    })
+</script>
+
 </html>

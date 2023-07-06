@@ -10,8 +10,9 @@ $route = request()->route()->getName();
     </figure>
     <nav>
         <section class="dicover">
-            <h3>GESTION DES BIENS</h3>
-
+            <a href="{{ route('admin.property.index') }}">
+                <h3>GESTION DES BIENS</h3>
+            </a>
             <ul>
                 <li>
                     <a href="{{ route('admin.property.index') }}" @class(['', 'active' => str_contains($route, 'property.index')])>
@@ -29,8 +30,9 @@ $route = request()->route()->getName();
             </ul>
         </section>
         <section class="tools">
-            <h3>GESTION DES OPTIONS</h3>
-
+            <a href="{{ route('admin.option.index') }}">
+                <h3>GESTION DES OPTIONS</h3>
+            </a>
             <ul>
                 <li>
                     <a href="{{ route('admin.option.index') }}" @class(['', 'active' => str_contains($route, 'option.')])>

@@ -34,6 +34,9 @@
                             @include('shared.input', ['placeholder' => 'Ville', 'name' => 'city', 'value' => $property->city])
                             @include('shared.input', ['placeholder' => 'Code Postal', 'name' => 'postal_code', 'value' => $property->postal_code])
                         </div>
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                            @include('shared.select', ['placeholder' => 'Options', 'name' => 'options', 'value' => $property->options()->pluck('id'), 'multiple' => true, 'options' => $options])
+                        </div>
                         <div class="mt-4">
                             <button class="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
                                 @if($property->exists)

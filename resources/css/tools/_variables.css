@@ -1,0 +1,38 @@
+:root {
+    --color-primary: #c38f4e;
+    --color-secondary: #2a3444;
+    --color-grey: #434343;
+    --color-light-grey: #9b9b9b;
+    --color-grey-dark: #3e403c;
+    --color-white: rgb(255, 255, 255);
+    --color-black: #000000;
+    --color-red: #f12711;
+    --color-yellow: #f5af19;
+    --color-green: #38ef7d;
+    --color-green-dark: #00b381;
+    --color-green-garken: #11998e;
+    --color-blue: #2f80ed;
+    --color-blue-light: #56ccf2;
+    --color-blue-grey: #a0bcdf;
+    --color-pink: #ec008c;
+    --color-pink-light: #fc6767;
+
+    --color-donkey: #90aaf9;
+    --color-donkeyschool: #ea560d;
+    --color-ringover: #3ddccf;
+    --color-softeam: #ffc905;
+    --color-auto: #ca9b52;
+
+    --color-palette1: #DABA91;
+    --color-palette2: #D2AA78;
+    --color-palette3: #CA9C62;
+    --color-palette4: #C38F4E;
+    --color-palette5: #B7823E;
+    --color-palette6: #A57538;
+    --color-palette7: #956932;
+    --color-palette9: #865E2D;
+    --color-palette8: #664822;
+
+    --font-family-primary: "Poppins", sans-serif;
+    --font-family-secondary: "Mansalva", sans-serif;
+}
