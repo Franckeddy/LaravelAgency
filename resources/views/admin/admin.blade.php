@@ -10,10 +10,14 @@
 </head>
 <body>
 
-@include('component.header')
+<div class="dashboard">
+    @include('component.aside')
 
-<div>
-    @yield('content')
+    @include('component.header')
+
+    <main class="content-wrap">
+        @yield('content')
+    </main>
 </div>
 
 </body>
