@@ -13,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+$idRegex = '[0-9]+';
+$slugRegex = '[a-z0-9\-]+';
+
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/biens', [\App\Http\Controllers\PropertyController::class, 'index'])->name('property.index');
+Route::get('/biens/{slug}-{property}', [\App\Http\Controllers\PropertyController::class, 'show'])->name('property.show')->where([
+    'property' => $idRegex,
+    'slug' => $slugRegex,
+]);
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('property', App\Http\Controllers\Admin\PropertyController::class)->except('show');
