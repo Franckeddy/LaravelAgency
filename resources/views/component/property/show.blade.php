@@ -4,6 +4,8 @@
 
 @section('content-property')
 
+@include('shared.flash')
+
     <section>
         <div class="relative mx-auto max-w-screen-xl px-4 py-8">
             <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
@@ -72,7 +74,7 @@
                         </div>
                     </div>
 
-                    <form class="mt-8">
+                    <div class="mt-8">
                         <fieldset>
                             <legend class="mb-1 text-sm font-medium text-black">Surface</legend>
                             <div class="flex flex-wrap gap-1">
@@ -176,7 +178,7 @@
                             <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
                                 <main class="flex lg:py-12 xl:col-span-12">
                                     <div class="max-w-xl lg:max-w-3xl">
-                                        <form action="#" class="" method="POST">
+                                        <form action="{{ route('property.contact', $property) }}" class="" method="POST">
                                             @csrf
                                             <div class="grid grid-cols-2 lg:gap-8">
                                             @include('shared.input', [
@@ -184,15 +186,12 @@
                                                 'name' => 'first_name',
                                                 'type' => 'text',
                                                 'placeholder' => 'Prénom',
-                                                'required' => true,
-                                                'autofocus' => true,
                                             ])
                                                 @include('shared.input', [
                                                     'label' => 'Last Name',
                                                     'name' => 'last_name',
                                                     'type' => 'text',
                                                     'placeholder' => 'Nom',
-                                                    'required' => true,
                                                 ])
                                             </div>
                                             <div class="grid grid-cols-2 gap-4 lg:gap-8">
@@ -201,19 +200,16 @@
                                                     'name' => 'email',
                                                     'type' => 'email',
                                                     'placeholder' => 'Email',
-                                                    'required' => true,
-                                                    'autofocus' => true,
                                                 ])
                                                 @include('shared.input', [
                                                     'label' => 'Phone',
                                                     'name' => 'phone',
                                                     'type' => 'text',
                                                     'placeholder' => 'Téléphone',
-                                                    'required' => true,
                                                 ])
                                             </div>
                                             <div>
-                                                @include('shared.input', ['type' => 'textarea', 'placeholder' => 'Votre Message', 'name' => 'description'])
+                                                @include('shared.input', ['label' => 'message', 'type' => 'textarea', 'placeholder' => 'Votre Message', 'name' => 'message'])
                                             </div>
                                             <div class="py-2 col-span-6 sm:flex sm:items-center sm:gap-4">
                                                 <button
@@ -228,7 +224,7 @@
                                 </main>
                             </div>
                         </section>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
