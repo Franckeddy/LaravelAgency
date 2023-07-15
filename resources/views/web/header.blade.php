@@ -3,12 +3,8 @@
         <div class="sm:flex sm:items-center sm:justify-between">
             <div class="text-center sm:text-left">
                 <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
-                    Welcome Back, Barry!
+                    Welcome!
                 </h1>
-
-                <p class="mt-1.5 text-sm text-gray-500">
-                    Let's write a new blog post! 🎉
-                </p>
             </div>
 
             <div class="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
@@ -16,7 +12,7 @@
                     class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 bg-white px-5 py-3 text-gray-500 transition hover:text-gray-700 focus:outline-none focus:ring"
                     type="button"
                 >
-                    <a href="{{ route('property.index') }}" class="text-sm font-medium"> Biens </a>
+                    <a href="{{ route('admin.property.index') }}" class="text-sm font-medium"> Admin </a>
 
                 </button>
 

@@ -56,6 +56,7 @@
                             <th class="py-3 pr-6 text-center">Surface</th>
                             <th class="py-3 pr-6 text-center">Prix</th>
                             <th class="py-3 pr-6 text-center">Ville</th>
+                            <th class="py-3 pr-6 text-center">Status</th>
                             <th class="py-3 pr-6 text-right">Actions</th>
                         </tr>
                         </thead>
@@ -65,11 +66,22 @@
                                 <td class="w-96 pr-6 py-4 whitespace-nowrap">{{ $property->title }}</td>
                                 <td class="pr-6 py-4 whitespace-nowrap text-center">{{ $property->surface }}m2</td>
                                 <td class="pr-6 py-4 whitespace-nowrap text-center">
-                        <span class="px-3 py-2 rounded-full font-semibold text-xs">
-                            {{ number_format($property->price, thousands_separator: ' ') }}
-                        </span>
+                                    <span class="px-3 py-2 rounded-full font-semibold text-xs">
+                                        {{ number_format($property->price, thousands_separator: ' ') }}
+                                    </span>
                                 </td>
                                 <td class="pr-6 py-4 whitespace-nowrap text-center">{{ $property->city }}</td>
+                                <td class="pr-6 py-4 whitespace-nowrap text-center">
+                                    @if($property->sold === 1)
+                                        <strong class="rounded-full border border-red-600 bg-gray-100 px-3 py-0.5 text-xs font-medium tracking-wide text-red-600">
+                                            Vendu
+                                        </strong>
+                                    @else
+                                        <strong class="rounded-full border border-green-600 bg-gray-100 px-3 py-0.5 text-xs font-medium tracking-wide text-green-600">
+                                            A Vendre
+                                        </strong>
+                                    @endif
+                                </td>
                                 <td class="whitespace-nowrap text-right">
                                     <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
                                         <a

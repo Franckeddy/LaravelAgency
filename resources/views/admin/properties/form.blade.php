@@ -13,7 +13,9 @@
 
                         <div class="grid grid-cols-1 gap-4 lg:grid-cols-[1fr_120px] lg:gap-8">
                             @include('shared.input', ['class' => 'rounded-lg', 'label' => 'Titre', 'placeholder' => 'Titre du bien', 'name' => 'title', 'value' => $property->title])
-                            @include('shared.checkbox', ['class' => 'rounded-lg gap-2 flex-col-reverse', 'placeholder' => 'Vendu', 'name' => 'sold', 'value' => $property->sold])
+                            @if(\Route::current()->getName() !== 'admin.property.create')
+                                @include('shared.checkbox', ['class' => 'rounded-lg gap-2 flex-col-reverse', 'placeholder' => 'Vendu', 'name' => 'sold', 'value' => $property->sold])
+                            @endif
                         </div>
 
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">

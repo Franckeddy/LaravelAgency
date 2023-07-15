@@ -44,11 +44,11 @@
                 </div>
 
                 <div class="sticky top-0">
-                    @if($property->status === true)
+                    @if($property->sold === 1)
                         <strong
                             class="rounded-full border border-red-600 bg-gray-100 px-3 py-0.5 text-xs font-medium tracking-wide text-red-600"
                         >
-                            {{ $property->status }}
+                            Vendu
                         </strong>
                     @else
                         <strong class="rounded-full border border-green-600 bg-gray-100 px-3 py-0.5 text-xs font-medium tracking-wide text-green-600">
