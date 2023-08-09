@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
 
 class AuthController extends Controller
 {
-    public function login() {
+    final public function login(): View {
         return view('auth.login');
     }
 
-    public function doLogin(LoginRequest $request) {
+    final public function doLogin(LoginRequest $request): RedirectResponse {
         $credentials = $request->validated();
 
         if (Auth::attempt($credentials)) {
@@ -27,7 +26,7 @@ class AuthController extends Controller
         ])->onlyInput('email');
     }
 
-    public function logout() {
+    final public function logout(): RedirectResponse {
         Auth::logout();
         return to_route('login')->with('success', 'Vous êtes déconnecté');
     }

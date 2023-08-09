@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SearchPropertiesRequest extends FormRequest
@@ -9,7 +10,7 @@ class SearchPropertiesRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
+    final public function authorize(): bool
     {
         return true;
     }
@@ -17,9 +18,9 @@ class SearchPropertiesRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
-    public function rules(): array
+    final public function rules(): array
     {
         $long = 'gte:0';
         return [

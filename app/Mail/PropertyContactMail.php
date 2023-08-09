@@ -25,7 +25,7 @@ class PropertyContactMail extends Mailable
     /**
      * Get the message envelope.
      */
-    public function envelope(): Envelope
+    final public function envelope(): Envelope
     {
         return new Envelope(
             to: 'admin@admin.fr',
@@ -37,7 +37,7 @@ class PropertyContactMail extends Mailable
     /**
      * Get the message content definition.
      */
-    public function content(): Content
+    final public function content(): Content
     {
         return new Content(
             markdown: 'emails.propery.contact',
@@ -49,7 +49,7 @@ class PropertyContactMail extends Mailable
      *
      * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
-    public function attachments(): array
+    final public function attachments(): array
     {
         return [];
     }

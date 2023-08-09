@@ -6,12 +6,13 @@ use App\Http\Requests\PropertyContactRequest;
 use App\Http\Requests\SearchPropertiesRequest;
 use App\Mail\PropertyContactMail;
 use App\Models\Property;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\View\View;
 
 class PropertyController extends Controller
 {
-    public function index(SearchPropertiesRequest $request)
+    final public function index(SearchPropertiesRequest $request): View
     {
         $query = Property::query()->orderBy('created_at', 'desc');
         if ($request->validated('price')) {
@@ -32,7 +33,7 @@ class PropertyController extends Controller
         ]);
     }
 
-    public function show(string $slug, Property $property)
+    final public function show(string $slug, Property $property): View | RedirectResponse
     {
         $expectedSlug = $property->getSlug();
         if ($slug !== $expectedSlug) {
@@ -43,7 +44,8 @@ class PropertyController extends Controller
         ]);
     }
 
-    public function contact(Property $property, PropertyContactRequest $propertyContactRequest) {
+    final public function contact(Property $property, PropertyContactRequest $propertyContactRequest): RedirectResponse
+    {
         Mail::send(new PropertyContactMail($property, $propertyContactRequest->validated()));
         return back()->with('success', 'Votre email a bien été envoyé');
     }
